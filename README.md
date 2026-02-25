@@ -1,18 +1,18 @@
-<!-- Header Banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:0f2027,50:203a43,100:2c5364&height=140&text=Asana%20%E2%87%84%20Google%20Sheets%20Sync&fontSize=38&fontColor=ffffff&fontAlignY=55&desc=Real-time%20bidirectional%20sync%20for%20creative%20ad%20production%20workflows&descAlignY=78&descSize=13&animation=fadeIn" />
-
-<br/>
 <div align="center">
 
-![n8n](https://img.shields.io/badge/n8n-workflow-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,40:203a43,100:2c5364&height=200&section=header&text=Asana%20%E2%87%84%20Google%20Sheets%20Sync&fontSize=40&fontColor=ffffff&fontAlignY=38&desc=Real-time%20bidirectional%20sync%20for%20creative%20ad%20production%20pipelines&descAlignY=58&descSize=14&animation=twinkling" />
+
+<br/>
+
+<img src="https://img.shields.io/badge/Status-Live%20%26%20Active-22c55e?style=for-the-badge&logo=circle&logoColor=white" />
 &nbsp;
-![Asana](https://img.shields.io/badge/Asana-F06A6A?style=flat-square&logo=asana&logoColor=white)
+<img src="https://img.shields.io/badge/n8n-Workflow-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" />
 &nbsp;
-![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=flat-square&logo=google-sheets&logoColor=white)
+<img src="https://img.shields.io/badge/Asana-Webhook%20Trigger-F06A6A?style=for-the-badge&logo=asana&logoColor=white" />
 &nbsp;
-![Trigger](https://img.shields.io/badge/Trigger-Webhook%20%2B%20Polling-3b82f6?style=flat-square)
+<img src="https://img.shields.io/badge/Google%20Sheets-Bidirectional%20Sync-34A853?style=for-the-badge&logo=google-sheets&logoColor=white" />
 &nbsp;
-![Sync](https://img.shields.io/badge/Sync-Bidirectional-f59e0b?style=flat-square)
+<img src="https://img.shields.io/badge/Sync-Every%201%20Minute-3b82f6?style=for-the-badge&logo=clockify&logoColor=white" />
 
 </div>
 
@@ -412,5 +412,7 @@ sequenceDiagram
 ---
 
 <div align="center">
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:2c5364,50:203a43,100:0f2027&height=60&section=footer" />
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=100&section=footer&animation=twinkling" />
+
 </div>
