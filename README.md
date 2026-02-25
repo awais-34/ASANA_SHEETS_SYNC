@@ -3,6 +3,8 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,40:203a43,100:2c5364&height=200&section=header&text=Asana%20%E2%87%84%20Google%20Sheets%20Sync&fontSize=40&fontColor=ffffff&fontAlignY=38&desc=Real-time%20bidirectional%20sync%20for%20creative%20ad%20production%20pipelines&descAlignY=58&descSize=14&animation=twinkling" />
 
 <br/>
+<img width="542" height="116" alt="Capture" src="https://github.com/user-attachments/assets/1447e6aa-5967-4832-b4df-0f87b265baac" />
+
 
 <img src="https://img.shields.io/badge/Status-Live%20%26%20Active-22c55e?style=for-the-badge&logo=circle&logoColor=white" />
 &nbsp;
@@ -11,7 +13,8 @@
 <img src="https://img.shields.io/badge/Asana-Webhook%20Trigger-F06A6A?style=for-the-badge&logo=asana&logoColor=white" />
 &nbsp;
 <img src="https://img.shields.io/badge/Google%20Sheets-Bidirectional%20Sync-34A853?style=for-the-badge&logo=google-sheets&logoColor=white" />
-&nbsp;
+&nbsp;<img width="542" height="116" alt="Capture" src="https://github.com/user-attachments/assets/4d9375ed-1dd1-4283-bda0-cc5a8d98e2b9" />
+
 <img src="https://img.shields.io/badge/Sync-Every%201%20Minute-3b82f6?style=for-the-badge&logo=clockify&logoColor=white" />
 
 </div>
