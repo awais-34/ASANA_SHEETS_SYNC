@@ -48,6 +48,32 @@ Built for a creative ad production team managing briefs across four pipeline sta
 
 ---
 
+## 🖼️ Workflow Screenshots
+
+<details>
+<summary><strong>📊 Workflow 1 — Asana → Excel</strong> &nbsp;(click to expand)</summary>
+
+<br/>
+
+> 4 Asana triggers fan in → Code → Get a task → Read sheet row → Diff check → Update row
+
+<img width="100%" src="pdf_screenshots/page2_img1.png" alt="Asana → Excel workflow canvas showing 4 triggers (Advertising, Filming, Editing, Ideation) flowing into Code node, Get a task, Get rows in sheet, Code1, IF diff gate, and Update row in sheet" />
+
+</details>
+
+<details>
+<summary><strong>📋 Workflow 2 — Excel → Asana</strong> &nbsp;(click to expand)</summary>
+
+<br/>
+
+> Watch Rows → IF (create vs update) → variables → Due date → Create/Update task → Custom fields → Tags → Write GID back
+
+<img width="100%" src="pdf_screenshots/page1_img1.jpeg" alt="Excel → Asana workflow canvas showing Watch Rows trigger, IF gate splitting into create path (Add variables, Due date1, Create a task1, custom fields, tags, Update row in sheet1) and update path (Add variables when update, Update a task, custom fields, tags)" />
+
+</details>
+
+---
+
 ## Workflow 1 — Asana → Excel
 
 > *"Any time a task changes in Asana, the sheet row is updated automatically."*
