@@ -43,7 +43,9 @@ When tasks are shifted in Asana, instant webhooks fire and a smart diffing engin
 <summary><strong>👉 Flow A: Asana → Excel Engine</strong></summary>
 
 <br>
-<img width="542" height="116" alt="Capture" src="https://github.com/user-attachments/assets/5baeae37-37c6-474a-9e51-a91065a646b6" /
+<img width="542" height="116" alt="Capture" src="https://github.com/user-attachments/assets/93f1c469-e225-4271-9e35-b8400626a06f" />
+
+
 
 
 <br>
@@ -54,7 +56,8 @@ When tasks are shifted in Asana, instant webhooks fire and a smart diffing engin
 <summary><strong>👉 Flow B: Excel → Asana Engine</strong></summary>
 
 <br>
-<img width="565" height="278" alt="Capture2" src="https://github.com/user-attachments/assets/b0ab9218-dcb0-49ce-9622-25fa0bdf4d79" />
+
+<img width="565" height="278" alt="Capture2" src="https://github.com/user-attachments/assets/5fde180e-787b-455b-9d85-d388b6f51be9" />
 
 <br>
 
@@ -285,13 +288,11 @@ sequenceDiagram
 
 <div align="center">
 
-**Built by [Abdul Rehman](https://github.com/ar-rehman786)**
+**Built by [Awais Salamat](https://github.com/awais-34)**
 
-[![Gmail](https://img.shields.io/badge/Email-abdulrehmanhameed4321%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abdulrehmanhameed4321@gmail.com)
+[![Gmail](https://img.shields.io/badge/Email-awais1salamat%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:awais1salamat@gmail.com)
 &nbsp;
-[![Slora AI](https://img.shields.io/badge/🚀_Slora_AI-sloraai.com-5D3EFF?style=for-the-badge)](https://www.sloraai.com/)
-&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-ar--rehman786-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ar-rehman786)
+[![GitHub](https://img.shields.io/badge/GitHub-awais--34-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/awais-34)
 
 </div>
 
