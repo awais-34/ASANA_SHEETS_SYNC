@@ -1,0 +1,1563 @@
+{
+  "name": "Excel to Asana",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA",
+          "mode": "list",
+          "cachedResultName": "CREATIVE RESEARCH [L-CART] ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739333721,
+          "mode": "list",
+          "cachedResultName": "CREATIVE ROADMAP",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit#gid=1739333721"
+        },
+        "event": "rowUpdate",
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRangeA1",
+              "range": "A1:Z1000"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -624,
+        160
+      ],
+      "id": "ecde3092-a27c-41b1-a2c3-f6d856616b32",
+      "name": "Watch Rows",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "nwH5IqCoMSjqERx7",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "taskTag",
+        "id": "={{ $('Update a task').last().json.gid }}",
+        "tag": "={{ $json.gid }}"
+      },
+      "type": "n8n-nodes-base.asana",
+      "typeVersion": 1,
+      "position": [
+        1392,
+        256
+      ],
+      "id": "8cebe472-6afb-4d82-a732-04ee88f22f19",
+      "name": "Add a task tag",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "workspace": "1210018926299426",
+        "name": "={{ $json.briefNumber }}",
+        "otherProperties": {
+          "due_on": "={{ $('Due date1').first().json.due_on}}",
+          "notes": "=\n1. {{ $('Add variables').item.json[\"Brief URL\"] || \"\"}}\n2. {{ $('Add variables').item.json.DRIVE_URL || \"\"}}",
+          "projects": "=1211025036975698"
+        }
+      },
+      "type": "n8n-nodes-base.asana",
+      "typeVersion": 1,
+      "position": [
+        272,
+        64
+      ],
+      "id": "2b9bd817-9b28-40f1-a83f-2e63fa537f75",
+      "name": "Create a task1",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA",
+          "mode": "list",
+          "cachedResultName": "CREATIVE RESEARCH [L-CART] ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739333721,
+          "mode": "list",
+          "cachedResultName": "CREATIVE ROADMAP",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit#gid=1739333721"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Asana Task GID": "={{ $('Create a task1').item.json.gid }}",
+            "UUID": "={{ $('Add variables').item.json.UUID }}"
+          },
+          "matchingColumns": [
+            "UUID"
+          ],
+          "schema": [
+            {
+              "id": "Brief #",
+              "displayName": "Brief #",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Author",
+              "displayName": "Author",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Editor",
+              "displayName": "Editor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "# of IT",
+              "displayName": "# of IT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Format",
+              "displayName": "Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Creator",
+              "displayName": "Creator",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Aspect Ratio",
+              "displayName": "Aspect Ratio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "LP",
+              "displayName": "LP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Ad Concept",
+              "displayName": "Ad Concept",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Launch Priority",
+              "displayName": "Launch Priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Brief Link",
+              "displayName": "Brief Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V2",
+              "displayName": "V2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V3",
+              "displayName": "V3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V4",
+              "displayName": "V4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V5",
+              "displayName": "V5",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V6",
+              "displayName": "V6",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V7",
+              "displayName": "V7",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Drive Link: 01 | BRIEFS",
+              "displayName": "Drive Link: 01 | BRIEFS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Brief URL",
+              "displayName": "Brief URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "DRIVE_URL",
+              "displayName": "DRIVE_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Asana Task GID",
+              "displayName": "Asana Task GID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UUID",
+              "displayName": "UUID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Sync Source",
+              "displayName": "Sync Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Persona",
+              "displayName": "Persona",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Desire",
+              "displayName": "Desire",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Awareness",
+              "displayName": "Awareness",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Main Benefit",
+              "displayName": "Main Benefit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Positioning",
+              "displayName": "Positioning",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Thesis",
+              "displayName": "Thesis",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Ad Set Level Naming",
+              "displayName": "Ad Set Level Naming",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Ad Level Naming",
+              "displayName": "Ad Level Naming",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "7 Days Results",
+              "displayName": "7 Days Results",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Export",
+              "displayName": "Export",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Spend",
+              "displayName": "Spend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ROAS",
+              "displayName": "ROAS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hold",
+              "displayName": "Hold",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CVR",
+              "displayName": "CVR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "AVG View",
+              "displayName": "AVG View",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Drop-Off",
+              "displayName": "Drop-Off",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Learnings",
+              "displayName": "Learnings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "1 Month Results",
+              "displayName": "1 Month Results",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Export",
+              "displayName": "Export",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Spend",
+              "displayName": "Spend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ROAS",
+              "displayName": "ROAS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hold",
+              "displayName": "Hold",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CVR",
+              "displayName": "CVR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "AVG View",
+              "displayName": "AVG View",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Drop-Off",
+              "displayName": "Drop-Off",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Failure Point",
+              "displayName": "Failure Point",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Learnings",
+              "displayName": "Learnings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "data",
+              "displayName": "data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Asana Change",
+              "displayName": "Asana Change",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Sheet Change",
+              "displayName": "Sheet Change",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        64
+      ],
+      "id": "b3cf1f9f-025c-4c60-b992-2a8aa2447a9a",
+      "name": "Update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "EoyFcOlII5qtnqHL",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all().map(({ json }) => {\n  const base = json.fillDate ? new Date(json.fillDate) : new Date();\n  const dow = base.getDay(); // 0=Sun, 1=Mon ... 5=Fri, 6=Sat\n  let add = 0;\n\n  if (dow >= 1 && dow <= 4) {      // Mon–Thu → this Friday\n    add = 5 - dow;\n  } else if (dow === 5) {          // Friday → next Friday\n    add = 7;\n  } else if (dow === 6) {          // Saturday → next Friday\n    add = 6;\n  } else {                         // Sunday → next Friday\n    add = 5;\n  }\n\n  const due = new Date(base);\n  due.setDate(base.getDate() + add);\n  json.due_on = due.toISOString().slice(0, 10);\n  return { json };\n});\nreturn items;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        48,
+        64
+      ],
+      "id": "52996408-db4d-4ffd-93f5-95e5610bddb8",
+      "name": "Due date1"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "taskTag",
+        "id": "={{ $('Create a task1').last().json.gid }}",
+        "tag": "={{ $json.gid }}"
+      },
+      "type": "n8n-nodes-base.asana",
+      "typeVersion": 1,
+      "position": [
+        1616,
+        64
+      ],
+      "id": "3d328192-fef0-4472-bcb9-c4e8ed3e40c4",
+      "name": "Add a task tag1",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "id": "={{ $json.taskGid }}",
+        "otherProperties": {
+          "notes": "=\n1. {{ $('Add variables when update').item.json[\"Brief URL\"] || \"\"}}\n2. {{ $('Add variables when update').item.json.DRIVE_URL || \"\"}}"
+        }
+      },
+      "type": "n8n-nodes-base.asana",
+      "typeVersion": 1,
+      "position": [
+        48,
+        256
+      ],
+      "id": "827d578a-47d3-459c-b0d2-0601afd3ffd0",
+      "name": "Update a task",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b4894921-4893-4260-8aa0-91cfb6e168c2",
+              "leftValue": "={{ $json['Asana Task GID'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -400,
+        160
+      ],
+      "id": "8f11e1af-53e5-415d-9447-8389d683c0f3",
+      "name": "If",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://app.asana.com/api/1.0/tasks/{{ $('Update a task').last().json.gid }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 2/1210906561768008/1211069209921160:75819f1d53528543ad55bdf57b8132e6"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"data\": {\n    \"custom_fields\": {\n      \"{{ $('Update a task').item.json.custom_fields[0].gid }}\": \"{{ $json.type.gid }}\",\n\n\"{{ $('Update a task').item.json.custom_fields[1].gid }}\": \"{{ $json.variation.gid }}\"\n,\n\"{{ $('Update a task').item.json.custom_fields[2].gid }}\": \"{{ $json.format.gid }}\"\n,\n\"{{ $('Update a task').item.json.custom_fields[3].gid }}\": \"{{ $('Add variables when update').item.json.lp }}\"\n,\n\"{{ $('Update a task').item.json.custom_fields[4].gid }}\": \"{{ $('Add variables when update').item.json.adConcept }}\"\n,\n\"{{ $('Update a task').item.json.custom_fields[5].gid }}\": \"{{ $json.launchPriority.gid }}\"\n\n    }\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        256
+      ],
+      "id": "2517f7c8-ce44-49b3-851a-e31c325ac3e5",
+      "name": "Update Custom Fields",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dc74b57a-6ec6-4617-94db-0cb31f53a659",
+              "name": "=briefNumber",
+              "value": "={{ $json['Brief #'] }}",
+              "type": "string"
+            },
+            {
+              "id": "a4fc24f8-a2c2-4a0b-98b5-ceaabe4c3e87",
+              "name": "editorName",
+              "value": "={{ $json.Editor }}",
+              "type": "string"
+            },
+            {
+              "id": "d459482e-03c7-4dda-a8ac-7163d8dffe35",
+              "name": "variation",
+              "value": "={{$json[\"# of IT\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "90b90475-8f4e-44ca-bcc2-092cc3064a7f",
+              "name": "type",
+              "value": "={{$json[\"Type\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "5b9c46c7-6372-4c2f-9064-ed681f3e7525",
+              "name": "format",
+              "value": "={{$json[\"Format\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "d989a170-03b3-412c-892c-49a72e7cc60f",
+              "name": "lp",
+              "value": "={{ $json.LP }}",
+              "type": "string"
+            },
+            {
+              "id": "6dc3219f-2e8b-4716-98ee-c1b41090e28c",
+              "name": "adConcept",
+              "value": "={{$json[\"Ad Concept\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "b721e87d-fb35-4b16-813f-2f95c67121e7",
+              "name": "launchPriority",
+              "value": "={{$json[\"Launch Priority\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "3bc5a513-2bbd-42e6-b8be-972137a7403f",
+              "name": "briefLink",
+              "value": "={{$json[\"Brief Link\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "da5e280d-c97f-424b-8c1b-a8d69905642d",
+              "name": "briefLink",
+              "value": "={{$json[\"Brief Link\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "556b1e38-198c-4e71-a71f-64c836ecbf9c",
+              "name": "driveLink",
+              "value": "={{ $json['Drive Link: 01 | BRIEFS'] }}",
+              "type": "string"
+            },
+            {
+              "id": "cc8c53d4-4666-474d-9c52-427929efefc1",
+              "name": "taskGid",
+              "value": "={{$json[\"Asana Task GID\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "6421a8e4-109f-455b-a570-fddddb9b795e",
+              "name": "authorName",
+              "value": "={{ $json.Author }}",
+              "type": "string"
+            },
+            {
+              "id": "25597865-e733-4cc0-9a60-fae013671306",
+              "name": "UUID",
+              "value": "={{ $json.UUID }}",
+              "type": "string"
+            },
+            {
+              "id": "79c8a341-59d9-4978-ad67-942769e0a865",
+              "name": "Brief URL",
+              "value": "={{ $json[\"Brief URL\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a2fe21e9-eb92-4351-b4dc-d555cbdf8c1d",
+              "name": "DRIVE_URL",
+              "value": "={{ $json.DRIVE_URL }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -176,
+        64
+      ],
+      "id": "86597a41-4e01-4b85-883a-98dad377d8f4",
+      "name": "Add variables"
+    },
+    {
+      "parameters": {
+        "url": "=https://app.asana.com/api/1.0/workspaces/1210018926299426/custom_fields\n",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 2/1210906561768008/1211069209921160:75819f1d53528543ad55bdf57b8132e6"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        272,
+        256
+      ],
+      "id": "7fa8bd74-b590-468b-b160-4a4dfe850607",
+      "name": "Get all custom fields"
+    },
+    {
+      "parameters": {
+        "url": "=https://app.asana.com/api/1.0/workspaces/1210018926299426/custom_fields\n",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 2/1210906561768008/1211069209921160:75819f1d53528543ad55bdf57b8132e6"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        496,
+        64
+      ],
+      "id": "3d409e2a-083b-4017-8657-8fb1a8ad5f9f",
+      "name": "Get all custom fields1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1) Asana custom fields metadata (from HTTP node)\nconst fields = $input.first().json.data \n\n// 2) Brief data (from Set Data node, for example)\nconst brief = $items(\"Add variables when update\")[0].json;\n\n// Helper to find matching enum_option object\nfunction getEnumMatch(fieldName, value) {\n  const field = fields.find(f => f.name.toLowerCase() === fieldName.toLowerCase());\n  if (!field || !field.enum_options) return null;\n\n  // Try to match ignoring case and trimming\n  return field.enum_options.find(opt =>\n    opt.name.toLowerCase().trim() === String(value).toLowerCase().trim()\n  ) || null;\n}\n\n// Build output object: map each brief property to its matching enum_option\nconst result = {\n  briefNumber: brief.briefNumber,\n  authorName: brief.authorName,\n  editorName: brief.editorName,\n  variation: getEnumMatch(\"Variation\", brief.variation),\n  type: getEnumMatch(\"Type\", brief.type),\n  format: getEnumMatch(\"Format\", brief.format),\n  lp: getEnumMatch(\"Landing Page\", brief.lp),\n  adConcept: getEnumMatch(\"Ad Concepts\", brief.adConcept),\n  launchPriority: getEnumMatch(\"Launch Priority\", brief.launchPriority),\n  briefLink: brief.briefLink,\n  driveLink: brief.driveLink,\n  taskGid: brief.taskGid,\n};\n\nreturn [{ json: result }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        496,
+        256
+      ],
+      "id": "fb436249-8222-498c-a9f8-aafbb159e8e3",
+      "name": "Matching custom fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1) Asana custom fields metadata (from HTTP node)\nconst fields = $input.first().json.data; \n\n// 2) Brief data (from Set Data node, for example)\nconst brief = $items(\"Add variables\")[0].json;\n\n// Helper to find matching enum_option object\nfunction getEnumMatch(fieldName, value) {\n  const field = fields.find(f => f.name.toLowerCase() === fieldName.toLowerCase());\n  if (!field || !field.enum_options) return null;\n\n  // Try to match ignoring case and trimming\n  return field.enum_options.find(opt =>\n    opt.name.toLowerCase().trim() === String(value).toLowerCase().trim()\n  ) || null;\n}\n\n// Build output object: map each brief property to its matching enum_option\nconst result = {\n  briefNumber: brief.briefNumber,\n  authorName: brief.authorName,\n  editorName: brief.editorName,\n  variation: getEnumMatch(\"Variation\", brief.variation),\n  type: getEnumMatch(\"Type\", brief.type),\n  format: getEnumMatch(\"Format\", brief.format),\n  lp: getEnumMatch(\"Landing Page\", brief.lp),\n  adConcept: getEnumMatch(\"Ad Concepts\", brief.adConcept),\n  launchPriority: getEnumMatch(\"Launch Priority\", brief.launchPriority),\n  briefLink: brief.briefLink,\n  driveLink: brief.driveLink,\n  taskGid: brief.taskGid,\n};\n\nreturn [{ json: result }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        64
+      ],
+      "id": "f56ee7fb-f365-441e-9823-7bd3311f38e6",
+      "name": "Matching custom fields1"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://app.asana.com/api/1.0/tasks/{{ $('Create a task1').last().json.gid }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 2/1210906561768008/1211069209921160:75819f1d53528543ad55bdf57b8132e6"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"data\": {\n    \"custom_fields\": {\n      \"{{ $('Create a task1').item.json.custom_fields[0].gid }}\": \"{{ $json.type.gid }}\",\n\n\"{{ $('Create a task1').item.json.custom_fields[1].gid }}\": \"{{ $json.variation.gid }}\"\n,\n\"{{ $('Create a task1').item.json.custom_fields[2].gid }}\": \"{{ $json.format.gid }}\"\n,\n\"{{ $('Create a task1').item.json.custom_fields[3].gid }}\": \"{{ $('Add variables').item.json.lp }}\"\n,\n\"{{ $('Create a task1').item.json.custom_fields[4].gid }}\": \"{{ $('Add variables').item.json.adConcept }}\"\n,\n\"{{ $('Create a task1').item.json.custom_fields[5].gid }}\": \"{{ $json.launchPriority.gid }}\"\n\n    }\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        944,
+        64
+      ],
+      "id": "b9db984e-b4ca-4763-aec8-4ac8c76c134e",
+      "name": "Update Custom Fields1",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "=https://app.asana.com/api/1.0/tags?workspace={{ $('Update a task').item.json.workspace.gid }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 2/1210906561768008/1211069209921160:75819f1d53528543ad55bdf57b8132e6"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        944,
+        256
+      ],
+      "id": "b785a212-b6ad-4bf5-a408-3657da562805",
+      "name": "Get all tags"
+    },
+    {
+      "parameters": {
+        "url": "=https://app.asana.com/api/1.0/tags?workspace={{ $('Create a task1').item.json.workspace.gid }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 2/1210906561768008/1211069209921160:75819f1d53528543ad55bdf57b8132e6"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1168,
+        64
+      ],
+      "id": "d2f1d64e-6c6b-46d9-8ec9-15e271da5252",
+      "name": "Get all tags1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input from previous nodes\nconst tagsResponse = $input.first().json.data;  // HTTP module output (all tags)\nconst item = $items(\"Add variables\")[0].json; // Your set data item\n\n// Names to match\nconst namesToMatch = [item.authorName, item.editorName];\n\n// Filter tags where name matches either authorName or editorName\nconst matchedTags = tagsResponse.filter(tag => namesToMatch.includes(tag.name));\n\n// Return them (so you can use gid later)\nreturn matchedTags.map(tag => ({\n  json: {\n    name: tag.name,\n    gid: tag.gid,\n  }\n}));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1392,
+        64
+      ],
+      "id": "e2038450-a36d-41d7-9d30-569e96ea34c5",
+      "name": "Return matching tags"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input from previous nodes\nconst tagsResponse = $input.first().json.data;  // HTTP module output (all tags)\nconst item = $items(\"Add variables when update\")[0].json; // Your set data item\n\n// Names to match\nconst namesToMatch = [item.authorName, item.editorName];\n\n// Filter tags where name matches either authorName or editorName\nconst matchedTags = tagsResponse.filter(tag => namesToMatch.includes(tag.name));\n\n// Return them (so you can use gid later)\nreturn matchedTags.map(tag => ({\n  json: {\n    name: tag.name,\n    gid: tag.gid,\n  }\n}));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        256
+      ],
+      "id": "3bef4c6e-2d8a-442b-8834-02ac86b4fc4c",
+      "name": "Return matching tags1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dc74b57a-6ec6-4617-94db-0cb31f53a659",
+              "name": "=briefNumber",
+              "value": "={{ $json['Brief #'] }}",
+              "type": "string"
+            },
+            {
+              "id": "a4fc24f8-a2c2-4a0b-98b5-ceaabe4c3e87",
+              "name": "editorName",
+              "value": "={{ $json.Editor }}",
+              "type": "string"
+            },
+            {
+              "id": "d459482e-03c7-4dda-a8ac-7163d8dffe35",
+              "name": "variation",
+              "value": "={{$json[\"# of IT\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "90b90475-8f4e-44ca-bcc2-092cc3064a7f",
+              "name": "type",
+              "value": "={{$json[\"Type\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "5b9c46c7-6372-4c2f-9064-ed681f3e7525",
+              "name": "format",
+              "value": "={{$json[\"Format\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "d989a170-03b3-412c-892c-49a72e7cc60f",
+              "name": "lp",
+              "value": "={{ $json.LP }}",
+              "type": "string"
+            },
+            {
+              "id": "6dc3219f-2e8b-4716-98ee-c1b41090e28c",
+              "name": "adConcept",
+              "value": "={{$json[\"Ad Concept\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "b721e87d-fb35-4b16-813f-2f95c67121e7",
+              "name": "launchPriority",
+              "value": "={{$json[\"Launch Priority\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "3bc5a513-2bbd-42e6-b8be-972137a7403f",
+              "name": "briefLink",
+              "value": "={{$json[\"Brief Link\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "da5e280d-c97f-424b-8c1b-a8d69905642d",
+              "name": "briefLink",
+              "value": "={{$json[\"Brief Link\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "556b1e38-198c-4e71-a71f-64c836ecbf9c",
+              "name": "driveLink",
+              "value": "={{ $json['Drive Link: 01 | BRIEFS'] }}",
+              "type": "string"
+            },
+            {
+              "id": "cc8c53d4-4666-474d-9c52-427929efefc1",
+              "name": "taskGid",
+              "value": "={{$json[\"Asana Task GID\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "6421a8e4-109f-455b-a570-fddddb9b795e",
+              "name": "authorName",
+              "value": "={{ $json.Author }}",
+              "type": "string"
+            },
+            {
+              "id": "25597865-e733-4cc0-9a60-fae013671306",
+              "name": "UUID",
+              "value": "={{ $json.UUID }}",
+              "type": "string"
+            },
+            {
+              "id": "79c8a341-59d9-4978-ad67-942769e0a865",
+              "name": "Brief URL",
+              "value": "={{ $json[\"Brief URL\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "a2fe21e9-eb92-4351-b4dc-d555cbdf8c1d",
+              "name": "DRIVE_URL",
+              "value": "={{ $json.DRIVE_URL }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -176,
+        256
+      ],
+      "id": "191970da-a868-446c-b970-d513860c200e",
+      "name": "Add variables when update"
+    }
+  ],
+  "pinData": {
+    "Watch Rows": [
+      {
+        "json": {
+          "row_number": 38,
+          "Brief #": "B5/AYB14",
+          "Author": "Aymen",
+          "Editor": "Anto",
+          "Status": "Ready For Advertising",
+          "# of IT": "V1",
+          "Type": "",
+          "Format": "RV",
+          "Creator": "",
+          "Aspect Ratio": "",
+          "LP": "",
+          "Ad Concept": "",
+          "Launch Priority": 3,
+          "Brief Link": "(RV) B5/AYB14",
+          "V2": "",
+          "V3": "",
+          "V4": "",
+          "V5": "",
+          "V6": "",
+          "V7": "",
+          "Drive Link: 01 | BRIEFS": "",
+          "Brief URL": "https://docs.google.com/document/d/1BoBxaV2pAt33dH23bcRnrMwA8njZ2JjqjuRY-ybpa8U/edit?usp=sharing",
+          "DRIVE_URL": "",
+          "Asana Task GID": "",
+          "UUID": "81ee931c-2d8d-420f-aa96-7f554d3f7366",
+          "Sync Source": "",
+          "Persona": "Cutting Gym Bro"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Watch Rows": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add a task tag": {
+      "main": [
+        []
+      ]
+    },
+    "Create a task1": {
+      "main": [
+        [
+          {
+            "node": "Get all custom fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet1": {
+      "main": [
+        []
+      ]
+    },
+    "Due date1": {
+      "main": [
+        [
+          {
+            "node": "Create a task1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add a task tag1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a task": {
+      "main": [
+        [
+          {
+            "node": "Get all custom fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Add variables",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add variables when update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Custom Fields": {
+      "main": [
+        [
+          {
+            "node": "Get all tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add variables": {
+      "main": [
+        [
+          {
+            "node": "Due date1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all custom fields": {
+      "main": [
+        [
+          {
+            "node": "Matching custom fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all custom fields1": {
+      "main": [
+        [
+          {
+            "node": "Matching custom fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Matching custom fields": {
+      "main": [
+        [
+          {
+            "node": "Update Custom Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Matching custom fields1": {
+      "main": [
+        [
+          {
+            "node": "Update Custom Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Custom Fields1": {
+      "main": [
+        [
+          {
+            "node": "Get all tags1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all tags": {
+      "main": [
+        [
+          {
+            "node": "Return matching tags1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all tags1": {
+      "main": [
+        [
+          {
+            "node": "Return matching tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Return matching tags": {
+      "main": [
+        [
+          {
+            "node": "Add a task tag1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Return matching tags1": {
+      "main": [
+        [
+          {
+            "node": "Add a task tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add variables when update": {
+      "main": [
+        [
+          {
+            "node": "Update a task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "dd1d7057-a8a2-4e0d-ad1a-bd8881bffff2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dc7ea10fac5ba564f1b62ebd5fd495beff3409fd669afcd3579c130f93db1377"
+  },
+  "id": "Gyp22vJ8rk2FkmlC",
+  "tags": []
+}
