@@ -1,0 +1,1025 @@
+{
+  "name": "Asana to Excel",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA",
+          "mode": "list",
+          "cachedResultName": "CREATIVE RESEARCH [L-CART] ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739333721,
+          "mode": "list",
+          "cachedResultName": "CREATIVE ROADMAP",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit#gid=1739333721"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "={{ $('Get a task').item.json.memberships[0].section.name }}",
+            "Asana Task GID": "={{ $('Get a task').item.json.gid }}",
+            "Brief #": "={{ $('Get a task').item.json.name }}",
+            "Author": "={{ $('Get a task').item.json.tags[0].name }}",
+            "Editor": "={{ $('Get a task').item.json.tags[1].name }}",
+            "# of IT": "={{ $('Get a task').item.json.custom_fields[1].display_value }}",
+            "LP": "={{ $('Get a task').item.json.custom_fields[3].display_value }}",
+            "Ad Concept": "={{ $('Get a task').item.json.custom_fields[4].display_value }}",
+            "Launch Priority": "={{ $('Get a task').item.json.custom_fields[5].display_value }}",
+            "Type": "={{ $('Get a task').item.json.custom_fields[0].display_value }}",
+            "Format": "={{ $('Get a task').item.json.custom_fields[2].display_value }}"
+          },
+          "matchingColumns": [
+            "Asana Task GID"
+          ],
+          "schema": [
+            {
+              "id": "Brief #",
+              "displayName": "Brief #",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Author",
+              "displayName": "Author",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Editor",
+              "displayName": "Editor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "# of IT",
+              "displayName": "# of IT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Format",
+              "displayName": "Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Creator",
+              "displayName": "Creator",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Aspect Ratio",
+              "displayName": "Aspect Ratio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "LP",
+              "displayName": "LP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ad Concept",
+              "displayName": "Ad Concept",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Launch Priority",
+              "displayName": "Launch Priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Brief Link",
+              "displayName": "Brief Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V2",
+              "displayName": "V2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V3",
+              "displayName": "V3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V4",
+              "displayName": "V4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V5",
+              "displayName": "V5",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V6",
+              "displayName": "V6",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "V7",
+              "displayName": "V7",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Drive Link: 01 | BRIEFS",
+              "displayName": "Drive Link: 01 | BRIEFS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Brief URL",
+              "displayName": "Brief URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "DRIVE_URL",
+              "displayName": "DRIVE_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Asana Task GID",
+              "displayName": "Asana Task GID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UUID",
+              "displayName": "UUID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Sync Source",
+              "displayName": "Sync Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Persona",
+              "displayName": "Persona",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Desire",
+              "displayName": "Desire",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Awareness",
+              "displayName": "Awareness",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Main Benefit",
+              "displayName": "Main Benefit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Positioning",
+              "displayName": "Positioning",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Thesis",
+              "displayName": "Thesis",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Ad Set Level Naming",
+              "displayName": "Ad Set Level Naming",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Ad Level Naming",
+              "displayName": "Ad Level Naming",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "7 Days Results",
+              "displayName": "7 Days Results",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Export",
+              "displayName": "Export",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Spend",
+              "displayName": "Spend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ROAS",
+              "displayName": "ROAS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hold",
+              "displayName": "Hold",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CVR",
+              "displayName": "CVR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "AVG View",
+              "displayName": "AVG View",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Drop-Off",
+              "displayName": "Drop-Off",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Learnings",
+              "displayName": "Learnings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "1 Month Results",
+              "displayName": "1 Month Results",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Export",
+              "displayName": "Export",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Spend",
+              "displayName": "Spend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ROAS",
+              "displayName": "ROAS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hold",
+              "displayName": "Hold",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CVR",
+              "displayName": "CVR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "AVG View",
+              "displayName": "AVG View",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Drop-Off",
+              "displayName": "Drop-Off",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Failure Point",
+              "displayName": "Failure Point",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Learnings",
+              "displayName": "Learnings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "data",
+              "displayName": "data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1344,
+        416
+      ],
+      "id": "117d761f-bb79-4487-b0e2-7601958da6b4",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "EoyFcOlII5qtnqHL",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "get",
+        "id": "={{ $json.gid }}"
+      },
+      "type": "n8n-nodes-base.asana",
+      "typeVersion": 1,
+      "position": [
+        448,
+        416
+      ],
+      "id": "6e948721-f285-428c-acf5-f143ec77a0bf",
+      "name": "Get a task",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst obj = items[0].json;\n\n// Recursively get the last object's gid\nfunction getLastGid(o) {\n  let lastGid = null;\n\n  for (const key of Object.keys(o)) {\n    const value = o[key];\n    if (value && typeof value === 'object' && !Array.isArray(value)) {\n      lastGid = getLastGid(value); // dive deeper\n    }\n  }\n\n  // If this object itself has gid, overwrite lastGid\n  if (o.gid) {\n    lastGid = o.gid;\n  }\n\n  return lastGid;\n}\n\nconst lastGid = getLastGid(obj);\n\nreturn [{ json: { gid: lastGid } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        416
+      ],
+      "id": "1d25397f-6447-44db-b5fe-a120525959df",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA",
+          "mode": "list",
+          "cachedResultName": "CREATIVE RESEARCH [L-CART] ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739333721,
+          "mode": "list",
+          "cachedResultName": "CREATIVE ROADMAP",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fP2DpH7dZ9QjyS1HcIdRiGZ4an1JPwy7GHLu_tFa1PA/edit#gid=1739333721"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Asana Task GID",
+              "lookupValue": "={{ $json.gid }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        416
+      ],
+      "id": "346b175d-e8c1-47d2-b69a-1407af2ae91c",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "EoyFcOlII5qtnqHL",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6723f45c-6334-4b09-a58e-2b4865ed9501",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json['Brief #'] }}",
+              "rightValue": "={{ $('Get a task').item.json.name }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "67613550-7e28-44cc-a61e-f25e608d3ca8",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json.Editor }}",
+              "rightValue": "={{ $('Get a task').item.json.tags[1].name }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "3d742354-d967-4719-a442-f9400562ad4d",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json.Status }}",
+              "rightValue": "={{ $('Get a task').item.json.memberships[0].section.name }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "fe871c67-ef9e-4cb8-96be-b465f0c7d9d6",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json['# of IT'] }}",
+              "rightValue": "={{ $('Get a task').item.json.custom_fields[1].display_value }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "85d36915-51f2-4d02-b101-0b5b8c8b2bad",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json.Type }}",
+              "rightValue": "={{ $('Get a task').item.json.custom_fields[0].display_value }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "0750848d-3a71-4d5e-ba1f-89160eb26c83",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json.LP }}",
+              "rightValue": "={{ $('Get a task').item.json.custom_fields[3].display_value }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "37321b79-6d05-4383-8829-299f73a92105",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json['Ad Concept'] }}",
+              "rightValue": "={{ $('Get a task').item.json.custom_fields[4].display_value }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "7d8ece1a-1f10-403a-b133-9bd8dff10603",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json['Launch Priority'] }}",
+              "rightValue": "={{ $('Get a task').item.json.custom_fields[5].display_value.toNumber() }}",
+              "operator": {
+                "type": "number",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "6063dff4-3731-4e4d-801b-489512445c45",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json['Brief URL'] }}",
+              "rightValue": "={{ $json.url1 }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "7536156c-276a-425c-87a3-f69bf6c83beb",
+              "leftValue": "={{ $('Get row(s) in sheet').item.json.DRIVE_URL }}",
+              "rightValue": "={{ $json.url2 }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        416
+      ],
+      "id": "451c05a4-083d-4053-a1a4-ab63711d3983",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $('Get a task').first().json\n\n// Get the notes text\nconst notes = item.notes || \"\";\n\n// Regex to capture URLs\nconst urls = notes.match(/https?:\\/\\/\\S+/g) || [];\n\n// Put each URL in its own variable\nconst url1 = urls[0] || \"\";\nconst url2 = urls[1] || \"\";\n\nreturn [\n  {\n    json: {\n      url1,\n      url2,\n      allUrls: urls  // also return as array if you want more than 2\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        416
+      ],
+      "id": "4e8d4a3e-22d4-45a3-8e82-aab44b20f63d",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "1210018922107046",
+        "workspace": "1210018926299426"
+      },
+      "type": "n8n-nodes-base.asanaTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        320
+      ],
+      "id": "60add630-125a-4eac-8bdc-bfdefa275ae2",
+      "name": "Filming",
+      "webhookId": "c7f9cb2b-977f-4a97-83c1-79a1b486ccdf",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "1211025036975704",
+        "workspace": "1210018926299426"
+      },
+      "type": "n8n-nodes-base.asanaTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        128
+      ],
+      "id": "1540a33b-2de7-4e03-b55e-d4c38adc5d92",
+      "name": "Advertising",
+      "webhookId": "1cc41f72-a102-405c-9eb0-b7aec40928ee",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "1211025036975701",
+        "workspace": "1210018926299426"
+      },
+      "type": "n8n-nodes-base.asanaTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        512
+      ],
+      "id": "ea38d5c4-1f03-4513-bfed-33db374b3391",
+      "name": "Editing",
+      "webhookId": "25bdf808-dd7a-44e2-a11d-13c5d8a8f6cc",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "1211025036975698",
+        "workspace": "1210018926299426"
+      },
+      "type": "n8n-nodes-base.asanaTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        704
+      ],
+      "id": "715e0946-d70c-4c7a-a558-5193671b66ab",
+      "name": "Ideation",
+      "webhookId": "3dd68923-23be-4407-84fc-e7bfc86f08dd",
+      "credentials": {
+        "asanaOAuth2Api": {
+          "id": "KRCKswVwJDtQs99g",
+          "name": "Asana account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get a task": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Get a task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ideation": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Editing": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filming": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Advertising": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2332b937-8e90-4735-bad1-bc66c21df341",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dc7ea10fac5ba564f1b62ebd5fd495beff3409fd669afcd3579c130f93db1377"
+  },
+  "id": "gcEtlvTMslLJQ3Ef",
+  "tags": []
+}
