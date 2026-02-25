@@ -43,14 +43,8 @@ When tasks are shifted in Asana, instant webhooks fire and a smart diffing engin
 <summary><strong>👉 Flow A: Asana → Excel Engine</strong></summary>
 
 <br>
+<img width="542" height="116" alt="Capture" src="https://github.com/user-attachments/assets/5baeae37-37c6-474a-9e51-a91065a646b6" /
 
-<!-- ============================================== -->
-<!-- 💡 DRAG AND DROP YOUR "ASANA TO EXCEL" WORKFLOW IMAGE HERE 👇 -->
-<!-- ============================================== -->
-
-
-
-<!-- ============================================== -->
 
 <br>
 
@@ -60,14 +54,7 @@ When tasks are shifted in Asana, instant webhooks fire and a smart diffing engin
 <summary><strong>👉 Flow B: Excel → Asana Engine</strong></summary>
 
 <br>
-
-<!-- ============================================== -->
-<!-- 💡 DRAG AND DROP YOUR "EXCEL TO ASANA" WORKFLOW IMAGE HERE 👇 -->
-<!-- ============================================== -->
-
-
-
-<!-- ============================================== -->
+<img width="565" height="278" alt="Capture2" src="https://github.com/user-attachments/assets/b0ab9218-dcb0-49ce-9622-25fa0bdf4d79" />
 
 <br>
 
